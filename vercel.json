@@ -1,19 +1,23 @@
 {
-  "version": 2,
-  "public": true,
+  "buildCommand": "echo 'No build needed'",
+  "outputDirectory": "public",
   "rewrites": [
     {
       "source": "/",
-      "destination": "/public/home.html"
+      "destination": "/home.html"
     },
     {
-      "source": "/(.*)",
-      "destination": "/public/$1"
+      "source": "/pages/:path*",
+      "destination": "/pages/:path*"
+    },
+    {
+      "source": "/assets/:path*",
+      "destination": "/assets/:path*"
     }
   ],
   "headers": [
     {
-      "source": "/public/(.*)",
+      "source": "/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
