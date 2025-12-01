@@ -1,12 +1,25 @@
 {
-  "routes": [
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
     {
-      "src": "/",
-      "dest": "/public/home.html"
+      "source": "/",
+      "destination": "/public/home.html",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/assets/:path*",
+      "destination": "/public/assets/:path*"
     },
     {
-      "src": "/(.*)",
-      "dest": "/public/$1"
+      "source": "/pages/:path*",
+      "destination": "/public/pages/:path*"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/public/:path*"
     }
   ]
 }
