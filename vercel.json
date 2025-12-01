@@ -1,29 +1,12 @@
 {
-  "buildCommand": "echo 'No build needed'",
-  "outputDirectory": "public",
-  "rewrites": [
+  "routes": [
     {
-      "source": "/",
-      "destination": "/home.html"
+      "src": "/",
+      "dest": "/public/home.html"
     },
     {
-      "source": "/pages/:path*",
-      "destination": "/pages/:path*"
-    },
-    {
-      "source": "/assets/:path*",
-      "destination": "/assets/:path*"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
-        }
-      ]
+      "src": "/(.*)",
+      "dest": "/public/$1"
     }
   ]
 }
