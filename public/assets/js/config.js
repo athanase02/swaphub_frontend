@@ -13,9 +13,8 @@ const SwapItConfig = {
     // API Base URL - Update this with your backend URL when deployed
     get apiBaseUrl() {
         if (this.isProduction) {
-            // IMPORTANT: Replace 'your-backend-url' with your actual Railway/Render URL
-            // Example: 'https://swapit-production.up.railway.app'
-            const BACKEND_URL = 'https://your-backend-url.up.railway.app';
+            // Railway production backend
+            const BACKEND_URL = 'https://cozy-imagination-production.up.railway.app/api';
             return BACKEND_URL;
         }
         // Local development - assumes XAMPP/WAMP running on port 80
